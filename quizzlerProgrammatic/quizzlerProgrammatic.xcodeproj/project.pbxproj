@@ -13,6 +13,7 @@
 		CD984AE823D456AC00F1DFD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD984AE723D456AC00F1DFD6 /* Assets.xcassets */; };
 		CD984AEB23D456AC00F1DFD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD984AEA23D456AC00F1DFD6 /* Preview Assets.xcassets */; };
 		CD984AEE23D456AC00F1DFD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD984AEC23D456AC00F1DFD6 /* LaunchScreen.storyboard */; };
+		CD984AF623D4579A00F1DFD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD984AF523D4579A00F1DFD6 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CD984AEA23D456AC00F1DFD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD984AED23D456AC00F1DFD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD984AEF23D456AC00F1DFD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD984AF523D4579A00F1DFD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				CD984AE123D456AA00F1DFD6 /* AppDelegate.swift */,
 				CD984AE323D456AA00F1DFD6 /* SceneDelegate.swift */,
+				CD984AF523D4579A00F1DFD6 /* ViewController.swift */,
 				CD984AE523D456AA00F1DFD6 /* ContentView.swift */,
 				CD984AE723D456AC00F1DFD6 /* Assets.xcassets */,
 				CD984AEC23D456AC00F1DFD6 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			files = (
 				CD984AE223D456AA00F1DFD6 /* AppDelegate.swift in Sources */,
 				CD984AE423D456AA00F1DFD6 /* SceneDelegate.swift in Sources */,
+				CD984AF623D4579A00F1DFD6 /* ViewController.swift in Sources */,
 				CD984AE623D456AA00F1DFD6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
