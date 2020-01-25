@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		CDCCF6AD23DCA94800D39559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6AC23DCA94800D39559 /* AppDelegate.swift */; };
 		CDCCF6AF23DCA94800D39559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6AE23DCA94800D39559 /* SceneDelegate.swift */; };
-		CDCCF6B123DCA94800D39559 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6B023DCA94800D39559 /* ContentView.swift */; };
 		CDCCF6B323DCA94C00D39559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCCF6B223DCA94C00D39559 /* Assets.xcassets */; };
 		CDCCF6B623DCA94C00D39559 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCCF6B523DCA94C00D39559 /* Preview Assets.xcassets */; };
 		CDCCF6B923DCA94C00D39559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCCF6B723DCA94C00D39559 /* LaunchScreen.storyboard */; };
 		CDCCF6C423DCA94C00D39559 /* destiniProgrammaticallyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6C323DCA94C00D39559 /* destiniProgrammaticallyTests.swift */; };
 		CDCCF6CF23DCA94C00D39559 /* destiniProgrammaticallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6CE23DCA94C00D39559 /* destiniProgrammaticallyUITests.swift */; };
+		CDCCF6DF23DCACA500D39559 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6DE23DCACA500D39559 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		CDCCF6A923DCA94800D39559 /* destiniProgrammatically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = destiniProgrammatically.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCCF6AC23DCA94800D39559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDCCF6AE23DCA94800D39559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CDCCF6B023DCA94800D39559 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CDCCF6B223DCA94C00D39559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDCCF6B523DCA94C00D39559 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CDCCF6B823DCA94C00D39559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		CDCCF6CA23DCA94C00D39559 /* destiniProgrammaticallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = destiniProgrammaticallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCCF6CE23DCA94C00D39559 /* destiniProgrammaticallyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = destiniProgrammaticallyUITests.swift; sourceTree = "<group>"; };
 		CDCCF6D023DCA94C00D39559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCCF6DE23DCACA500D39559 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				CDCCF6AC23DCA94800D39559 /* AppDelegate.swift */,
+				CDCCF6DC23DCAC8900D39559 /* Controllers */,
 				CDCCF6AE23DCA94800D39559 /* SceneDelegate.swift */,
-				CDCCF6B023DCA94800D39559 /* ContentView.swift */,
 				CDCCF6B223DCA94C00D39559 /* Assets.xcassets */,
 				CDCCF6B723DCA94C00D39559 /* LaunchScreen.storyboard */,
 				CDCCF6BA23DCA94C00D39559 /* Info.plist */,
@@ -134,6 +134,14 @@
 				CDCCF6D023DCA94C00D39559 /* Info.plist */,
 			);
 			path = destiniProgrammaticallyUITests;
+			sourceTree = "<group>";
+		};
+		CDCCF6DC23DCAC8900D39559 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDCCF6DE23DCACA500D39559 /* MainViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +277,7 @@
 			files = (
 				CDCCF6AD23DCA94800D39559 /* AppDelegate.swift in Sources */,
 				CDCCF6AF23DCA94800D39559 /* SceneDelegate.swift in Sources */,
-				CDCCF6B123DCA94800D39559 /* ContentView.swift in Sources */,
+				CDCCF6DF23DCACA500D39559 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"destiniProgrammatically/Preview Content\"";
+				DEVELOPMENT_TEAM = P2956JDDUT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = destiniProgrammatically/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"destiniProgrammatically/Preview Content\"";
+				DEVELOPMENT_TEAM = P2956JDDUT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = destiniProgrammatically/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
