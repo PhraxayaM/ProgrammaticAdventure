@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     let allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
     var questionNumber: Int = 0
+    var score: Int = 0
     
     override func viewDidLoad() {
         view.backgroundColor = .blue
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     func setupView() {
         view.addSubview(questionLabel)
         view.addSubview(scoreLabel)
+        view.addSubview(progressLabel)
         view.addSubview(trueButton)
         view.addSubview(falseButton)
     }
@@ -48,6 +50,10 @@ class ViewController: UIViewController {
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         scoreLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        
+        progressLabel.translatesAutoresizingMaskIntoConstraints = false
+        progressLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        progressLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
         
         trueButton.translatesAutoresizingMaskIntoConstraints = false
         trueButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 300).isActive = true
@@ -76,7 +82,14 @@ class ViewController: UIViewController {
     
     let scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "Score: "
+        label.text = "Score: 0"
+        label.textColor = .white
+        return label
+    }()
+    
+    let progressLabel: UILabel = {
+        let label = UILabel()
+        label.text = "x/13"
         label.textColor = .white
         return label
     }()
@@ -115,19 +128,29 @@ class ViewController: UIViewController {
         nextQuestion()
     }
     
+    func updateScore() {
+        scoreLabel.text = ("Score: \(score)")
+    }
+    
     func checkAnswer() {
         let correctAnswer = allQuestions.list[questionNumber].answer
         
         if correctAnswer == pickedAnswer {
             print("Correct!")
+            score += 1
+            updateScore()
         } else {
             print("Wrong")
         }
+        progressLabel.text = ("\(questionNumber + 1)/13")
         
     }
     
     func startOver() {
-        
+        questionNumber = 0
+        score = 0
+        scoreLabel.text = "Score: 0"
+        progressLabel.text = "X/13"
     }
     
     func nextQuestion() {
@@ -136,13 +159,16 @@ class ViewController: UIViewController {
         questionLabel.text = allQuestions.list[questionNumber].questionText
         } else {
 //            print("Quiz Over")
-            questionNumber = 0
+            
             let alert = UIAlertController(title: "Awesome!", message: "You've finished all the questions", preferredStyle: .alert)
             
             let restartAction = UIAlertAction(title: "Restart", style: .default) { (UIAlertAction) in
                 self.startOver()
             }
+            alert.addAction(restartAction)
+            present(alert, animated: true, completion: nil)
         }
+        
     }
     
 }
