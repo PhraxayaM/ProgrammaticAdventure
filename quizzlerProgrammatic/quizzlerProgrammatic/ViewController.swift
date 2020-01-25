@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var score: Int = 0
     
     override func viewDidLoad() {
-        view.backgroundColor = .blue
+        view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         setup()
         let firstQuestion = allQuestions.list[0]
         questionLabel.text = firstQuestion.questionText
@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         view.addSubview(questionLabel)
         view.addSubview(scoreLabel)
         view.addSubview(progressLabel)
+        view.addSubview(progressBar)
         view.addSubview(trueButton)
         view.addSubview(falseButton)
     }
@@ -52,8 +53,14 @@ class ViewController: UIViewController {
         scoreLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         
         progressLabel.translatesAutoresizingMaskIntoConstraints = false
-        progressLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        progressLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
         progressLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
+        
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        progressBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        progressBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
+        progressBar.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        progressBar.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         trueButton.translatesAutoresizingMaskIntoConstraints = false
         trueButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 300).isActive = true
@@ -94,10 +101,16 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let progressBar: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        return label
+    }()
+    
     let trueButton: UIButton = {
         let button = UIButton()
         button.setTitle("True", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.1921568627, green: 0.6392156863, blue: 0.262745098, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0, green: 0.8088991642, blue: 0, alpha: 1)
         button.addTarget(self, action: #selector(answerPressed), for: .touchUpInside)
         button.tag = 1
         return button
@@ -129,7 +142,10 @@ class ViewController: UIViewController {
     }
     
     func updateScore() {
+        var updateBar = (view.frame.size.width / 13) * CGFloat(questionNumber + 1)
         scoreLabel.text = ("Score: \(score)")
+//        progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNumber + 1)
+        progressBar.widthAnchor.constraint(equalToConstant: updateBar).isActive = true
     }
     
     func checkAnswer() {
