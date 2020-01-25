@@ -15,6 +15,7 @@
 		CDCCF6C423DCA94C00D39559 /* destiniProgrammaticallyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6C323DCA94C00D39559 /* destiniProgrammaticallyTests.swift */; };
 		CDCCF6CF23DCA94C00D39559 /* destiniProgrammaticallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6CE23DCA94C00D39559 /* destiniProgrammaticallyUITests.swift */; };
 		CDCCF6DF23DCACA500D39559 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6DE23DCACA500D39559 /* MainViewController.swift */; };
+		CDCCF6E223DCAE1B00D39559 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCCF6E123DCAE1B00D39559 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CDCCF6CE23DCA94C00D39559 /* destiniProgrammaticallyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = destiniProgrammaticallyUITests.swift; sourceTree = "<group>"; };
 		CDCCF6D023DCA94C00D39559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDCCF6DE23DCACA500D39559 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CDCCF6E123DCAE1B00D39559 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		CDCCF6AB23DCA94800D39559 /* destiniProgrammatically */ = {
 			isa = PBXGroup;
 			children = (
+				CDCCF6E023DCADF200D39559 /* Views */,
 				CDCCF6AC23DCA94800D39559 /* AppDelegate.swift */,
 				CDCCF6DC23DCAC8900D39559 /* Controllers */,
 				CDCCF6AE23DCA94800D39559 /* SceneDelegate.swift */,
@@ -142,6 +145,14 @@
 				CDCCF6DE23DCACA500D39559 /* MainViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CDCCF6E023DCADF200D39559 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDCCF6E123DCAE1B00D39559 /* MainView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCCF6AD23DCA94800D39559 /* AppDelegate.swift in Sources */,
+				CDCCF6E223DCAE1B00D39559 /* MainView.swift in Sources */,
 				CDCCF6AF23DCA94800D39559 /* SceneDelegate.swift in Sources */,
 				CDCCF6DF23DCACA500D39559 /* MainViewController.swift in Sources */,
 			);
