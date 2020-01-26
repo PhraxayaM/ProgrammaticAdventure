@@ -11,6 +11,9 @@ import UIKit
 
 class MainView: UIView {
     
+    var storyIndex: Int = 1
+    let answerStoryModel = StoryModel()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 //        backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
@@ -35,8 +38,8 @@ class MainView: UIView {
         backgroundImage.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
         
         storyLabel.translatesAutoresizingMaskIntoConstraints = false
-        storyLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        storyLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        storyLabel.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        storyLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
         storyLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
         storyLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         
@@ -65,8 +68,10 @@ class MainView: UIView {
     
     let storyLabel: UILabel = {
         let label = UILabel()
-        label.text = "testing"
+//        let test = StoryModel()
+        label.text = "test"
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        label.numberOfLines = 15
         label.textAlignment = .center
         
         return label
@@ -87,5 +92,5 @@ class MainView: UIView {
         button.tag = 2
         return button
     }()
-    
+
 }
