@@ -30,6 +30,7 @@ class MainView: UIView {
         addSubview(storyLabel)
         addSubview(topButton)
         addSubview(bottomButton)
+        addSubview(restartButton)
     }
     
     func setupViewConstraints() {
@@ -56,6 +57,11 @@ class MainView: UIView {
         bottomButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         bottomButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         bottomButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
+        
+        restartButton.translatesAutoresizingMaskIntoConstraints = false
+        restartButton.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 30).isActive = true
+        restartButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+//        restartButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
         
     }
     
@@ -91,5 +97,11 @@ class MainView: UIView {
         button.tag = 2
         return button
     }()
-
+    
+    let restartButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Restart", for: .normal)
+        button.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return button
+    }()
 }

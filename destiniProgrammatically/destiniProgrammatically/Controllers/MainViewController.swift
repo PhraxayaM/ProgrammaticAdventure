@@ -18,13 +18,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         setup()
-        mainView.storyLabel.text = mainView.answerStoryModel.story1
-        mainView.topButton.setTitle(mainView.answerStoryModel.answer1a, for: .normal)
-        mainView.bottomButton.setTitle(mainView.answerStoryModel.answer1b, for: .normal)
+        
     }
     
     func setup() {
         setupView()
+        mainView.storyLabel.text = mainView.answerStoryModel.story1
+        mainView.topButton.setTitle(mainView.answerStoryModel.answer1a, for: .normal)
+        mainView.bottomButton.setTitle(mainView.answerStoryModel.answer1b, for: .normal)
     }
     
     func setupView() {
@@ -33,6 +34,7 @@ class MainViewController: UIViewController {
         self.view.addSubview(mainView)
         mainView.topButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         mainView.bottomButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        mainView.restartButton.addTarget(self, action: #selector(restartPressed(_:)), for: .touchUpInside)
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
@@ -56,17 +58,33 @@ class MainViewController: UIViewController {
             mainView.topButton.isHidden = true
             mainView.bottomButton.isHidden = true
             storyIndex = 5
-        } else if sender.tag == 1 && storyIndex == 2 {
-            mainView.storyLabel.text = mainView.answerStoryModel.story3
-            mainView.topButton.setTitle(mainView.answerStoryModel.answer3a, for: .normal)
-            mainView.bottomButton.setTitle(mainView.answerStoryModel.answer3b, for: .normal)
-            storyIndex = 3
+//        } else if sender.tag == 1 && storyIndex == 2 {
+//            mainView.storyLabel.text = mainView.answerStoryModel.story3
+//            mainView.topButton.setTitle(mainView.answerStoryModel.answer3a, for: .normal)
+//            mainView.bottomButton.setTitle(mainView.answerStoryModel.answer3b, for: .normal)
+//            storyIndex = 3
         } else if sender.tag ==  2 && storyIndex == 2 {
             mainView.storyLabel.text = mainView.answerStoryModel.story4
             mainView.topButton.isHidden = true
             mainView.bottomButton.isHidden = true
             storyIndex = 4
         }
+        
+        if storyIndex == 4 || storyIndex == 5 || storyIndex == 6 {
+            mainView.restartButton.isHidden = false
+        }
+        
+    }
+    
+    @objc func restartPressed(_ sender: UIButton) {
+        mainView.restartButton.isHidden = true
+        mainView.storyLabel.text = mainView.answerStoryModel.story1
+        mainView.topButton.setTitle(mainView.answerStoryModel.answer1a, for: .normal)
+        mainView.bottomButton.setTitle(mainView.answerStoryModel.answer1b, for: .normal)
+        mainView.topButton.isHidden = false
+        mainView.bottomButton.isHidden = false
+        storyIndex = 1
+        
     }
     
 }
