@@ -68,7 +68,6 @@ class MainView: UIView {
     
     let storyLabel: UILabel = {
         let label = UILabel()
-//        let test = StoryModel()
         label.text = "test"
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         label.numberOfLines = 15
