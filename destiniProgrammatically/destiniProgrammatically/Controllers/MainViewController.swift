@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
-        if sender.tag == 1 && storyIndex == 1{
+        if sender.tag == 1 && (storyIndex == 1 || storyIndex == 2) {
             mainView.storyLabel.text = mainView.answerStoryModel.story3
             mainView.topButton.setTitle(mainView.answerStoryModel.answer3a, for: .normal)
             mainView.bottomButton.setTitle(mainView.answerStoryModel.answer3b, for: .normal)
@@ -61,6 +61,11 @@ class MainViewController: UIViewController {
             mainView.topButton.setTitle(mainView.answerStoryModel.answer3a, for: .normal)
             mainView.bottomButton.setTitle(mainView.answerStoryModel.answer3b, for: .normal)
             storyIndex = 3
+        } else if sender.tag ==  2 && storyIndex == 2 {
+            mainView.storyLabel.text = mainView.answerStoryModel.story4
+            mainView.topButton.isHidden = true
+            mainView.bottomButton.isHidden = true
+            storyIndex = 4
         }
     }
     
