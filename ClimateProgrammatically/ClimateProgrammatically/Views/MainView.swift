@@ -28,6 +28,8 @@ class MainView: UIView {
     
     func setupSubview() {
         addSubview(backgroundImage)
+        addSubview(temperatureLabel)
+        addSubview(cityLabel)
     }
     
     
@@ -39,17 +41,23 @@ class MainView: UIView {
         return image
     }()
     
-    let degreeLabel: UILabel = {
+    let temperatureLabel: UILabel = {
         let label = UILabel()
-        label.text = "Test"
+        label.text = "30°"
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        label.textAlignment = .center
+        label.font = label.font.withSize(70)
+        
+
         return label
     }()
     
-    let loadingLabel: UILabel = {
+    let cityLabel: UILabel = {
         let label = UILabel()
         label.text = "Loading.."
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.textAlignment = .center
+        label.font = label.font.withSize(70)
         return label
     }()
     
