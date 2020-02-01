@@ -1,0 +1,6 @@
+framework module Pods_ClimateProgrammatically {
+  umbrella header "Pods-ClimateProgrammatically-umbrella.h"
+
+  export *
+  module * { export * }
+}
