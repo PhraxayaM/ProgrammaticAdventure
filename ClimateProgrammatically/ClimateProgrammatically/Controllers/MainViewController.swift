@@ -36,7 +36,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate
     func setupView(){
         let MainViews = MainView(frame: self.view.frame)
         mainView = MainViews
+        
         self.view.addSubview(mainView)
+        mainView.changeCityButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
     func setupPermissionRequest(){
@@ -101,6 +103,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate
         
         mainView.cityLabel.text = weatherDataModel.city
         mainView.temperatureLabel.text = "\(weatherDataModel.temperate)"
+        
+    }
+    
+    @objc func buttonPressed() {
+        print("button pressed")
+        navigationController?.pushViewController(ChangeCityViewController(), animated: true)
     }
     
 }

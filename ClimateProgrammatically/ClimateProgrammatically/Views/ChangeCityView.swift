@@ -13,6 +13,7 @@ class ChangeCityView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setup()
         
     }
     
@@ -26,7 +27,25 @@ class ChangeCityView: UIView {
     }
     
     func setupView(){
-        
+        setupSubview()
+        setupConstraints()
     }
+    func setupSubview(){
+        addSubview(backgroundImage)
+        addSubview(cityNameTextfield)
+    }
+    
+     let backgroundImage: UIImageView = {
+           let image = UIImageView()
+           image.image = UIImage(named: "cityBackground")
+           return image
+       }()
+    
+    let cityNameTextfield: UITextField = {
+        let textField = UITextField()
+        textField.backgroundColor = .white
+        return textField
+    }()
+    
     
 }

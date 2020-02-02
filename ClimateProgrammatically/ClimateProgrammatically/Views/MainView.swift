@@ -30,6 +30,7 @@ class MainView: UIView {
         addSubview(backgroundImage)
         addSubview(temperatureLabel)
         addSubview(cityLabel)
+        addSubview(changeCityButton)
     }
     
     
@@ -59,6 +60,14 @@ class MainView: UIView {
         label.textAlignment = .center
         label.font = label.font.withSize(70)
         return label
+    }()
+    
+    let changeCityButton: UIButton = {
+        let button = UIButton()
+//        let image = UIImage(named: "switch")
+//        button.setImage(image, for: .normal)
+        button.backgroundColor = .red
+        return button
     }()
     
 }

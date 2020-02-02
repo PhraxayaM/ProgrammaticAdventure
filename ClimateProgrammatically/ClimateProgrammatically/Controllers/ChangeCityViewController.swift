@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+import UIKit
+
+class ChangeCityViewController: UIViewController {
+    
+    var mainView = ChangeCityView()
+    
+    override func viewDidLoad() {
+        super .viewDidLoad()
+        setup()
+    }
+    
+    func setup() {
+        setupView()
+    }
+    func setupView() {
+        let mainViews = ChangeCityView(frame: self.view.frame)
+        mainView = mainViews
+        view.addSubview(mainView)
+    }
+
+}

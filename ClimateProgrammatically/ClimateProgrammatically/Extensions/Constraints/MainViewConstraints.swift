@@ -36,8 +36,12 @@ extension MainView {
 //        cityLabel.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 50).isActive = true
         cityLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive  = true
 
-        
-        
+        changeCityButton.translatesAutoresizingMaskIntoConstraints = false
+        changeCityButton.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+//        changeCityButton.rightAnchor.constraint(equalTo: rightAnchor, constant: 30).isActive = true
+        changeCityButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        changeCityButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        changeCityButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
 }

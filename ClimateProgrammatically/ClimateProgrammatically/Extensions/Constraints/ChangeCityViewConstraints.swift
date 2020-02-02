@@ -13,9 +13,17 @@ extension ChangeCityView {
     
     func setupConstraints(){
         
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImage.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        backgroundImage.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        backgroundImage.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
-        
-        
+        cityNameTextfield.translatesAutoresizingMaskIntoConstraints = false
+        cityNameTextfield.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
+        cityNameTextfield.leftAnchor.constraint(equalTo: leftAnchor, constant: 50).isActive = true
+        cityNameTextfield.rightAnchor.constraint(equalTo: rightAnchor, constant: 50).isActive = true
+        cityNameTextfield.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         
     }
