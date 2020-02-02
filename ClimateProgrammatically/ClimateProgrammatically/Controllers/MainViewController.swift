@@ -19,6 +19,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "435bd3d12d68cedd66191c5eb5092e09"
     let locationManager = CLLocationManager()
+    let weatherDataModel = WeathDataModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +70,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
             if response.result.isSuccess {
                 print("success! got weather data")
-                print(self.APP_ID)
-                print(parameters)
                 let weatherJSON : JSON = JSON(response.result.value!)
-                print(weatherJSON)
+                self.updateWeatherData(json: weatherJSON)
                 
             }
             else {
@@ -83,5 +82,25 @@ class MainViewController: UIViewController, CLLocationManagerDelegate
         }
     }
     
+    func updateWeatherData(json: JSON) {
+        
+        if let temp = json["main"]["temp"].double {
+        weatherDataModel.temperate = Int(temp - 273.15)
+        weatherDataModel.city = json["name"].stringValue
+        weatherDataModel.condition = json["weather"][0]["id"].intValue
+            weatherDataModel.weatherIconName = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition)
+            
+            updateUIWithWeatherData()
+        }
+        else {
+            mainView.cityLabel.text = "weather unavailable"
+        }
+    }
+
+    func updateUIWithWeatherData() {
+        
+        mainView.cityLabel.text = weatherDataModel.city
+        mainView.temperatureLabel.text = "\(weatherDataModel.temperate)"
+    }
     
 }
