@@ -31,6 +31,7 @@ class MainView: UIView {
         addSubview(temperatureLabel)
         addSubview(cityLabel)
         addSubview(changeCityButton)
+        addSubview(weatherIcon)
     }
     
     
@@ -64,10 +65,15 @@ class MainView: UIView {
     
     let changeCityButton: UIButton = {
         let button = UIButton()
-//        let image = UIImage(named: "switch")
-//        button.setImage(image, for: .normal)
-        button.backgroundColor = .red
+        let image = UIImage(named: "switch")
+        button.setImage(image, for: .normal)
+//        button.backgroundColor = .red
         return button
     }()
     
+    let weatherIcon: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "fog")
+        return image
+    }()
 }

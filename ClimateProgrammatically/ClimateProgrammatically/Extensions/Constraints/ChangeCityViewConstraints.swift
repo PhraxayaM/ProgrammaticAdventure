@@ -20,11 +20,15 @@ extension ChangeCityView {
         backgroundImage.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
         cityNameTextfield.translatesAutoresizingMaskIntoConstraints = false
-        cityNameTextfield.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
+        cityNameTextfield.topAnchor.constraint(equalTo: topAnchor, constant: 200).isActive = true
         cityNameTextfield.leftAnchor.constraint(equalTo: leftAnchor, constant: 50).isActive = true
-        cityNameTextfield.rightAnchor.constraint(equalTo: rightAnchor, constant: 50).isActive = true
-        cityNameTextfield.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        cityNameTextfield.rightAnchor.constraint(equalTo: rightAnchor, constant: -50).isActive = true
+        cityNameTextfield.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        getCityButton.translatesAutoresizingMaskIntoConstraints = false
+        getCityButton.topAnchor.constraint(equalTo: cityNameTextfield.topAnchor, constant: 80).isActive = true
+        getCityButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 80).isActive = true
+        getCityButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -80).isActive = true
         
     }
     

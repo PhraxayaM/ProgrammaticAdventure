@@ -12,8 +12,10 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-class MainViewController: UIViewController, CLLocationManagerDelegate
+class MainViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate
 {
+    
+    
     
     var mainView = MainView()
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
@@ -38,7 +40,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate
         mainView = MainViews
         
         self.view.addSubview(mainView)
-        mainView.changeCityButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        mainView.changeCityButton.addTarget(self, action: #selector(changeCitybuttonPressed), for: .touchUpInside)
     }
     
     func setupPermissionRequest(){
@@ -103,12 +105,25 @@ class MainViewController: UIViewController, CLLocationManagerDelegate
         
         mainView.cityLabel.text = weatherDataModel.city
         mainView.temperatureLabel.text = "\(weatherDataModel.temperate)"
+        mainView.weatherIcon.image = UIImage(named: weatherDataModel.weatherIconName)
+        print("Weather is: \(weatherDataModel.weatherIconName)")
+        
         
     }
     
-    @objc func buttonPressed() {
+    @objc func changeCitybuttonPressed() {
         print("button pressed")
-        navigationController?.pushViewController(ChangeCityViewController(), animated: true)
+        let destinationVC = ChangeCityViewController()
+        destinationVC.delegate = self
+        navigationController?.present(destinationVC, animated: true, completion: nil)
+
     }
+    
+    func userEnteredANewCityName(city: String) {
+        print("city is: \(city)")
+    }
+    
+
+    
     
 }

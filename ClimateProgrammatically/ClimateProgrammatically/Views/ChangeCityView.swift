@@ -33,6 +33,7 @@ class ChangeCityView: UIView {
     func setupSubview(){
         addSubview(backgroundImage)
         addSubview(cityNameTextfield)
+        addSubview(getCityButton)
     }
     
      let backgroundImage: UIImageView = {
@@ -45,6 +46,13 @@ class ChangeCityView: UIView {
         let textField = UITextField()
         textField.backgroundColor = .white
         return textField
+    }()
+    
+    let getCityButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Get Weather", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        return button
     }()
     
     
