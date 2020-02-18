@@ -107,8 +107,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ChangeCit
         mainView.temperatureLabel.text = "\(weatherDataModel.temperate)"
         mainView.weatherIcon.image = UIImage(named: weatherDataModel.weatherIconName)
         print("Weather is: \(weatherDataModel.weatherIconName)")
-        
-        
+                
     }
     
     @objc func changeCitybuttonPressed() {
@@ -121,6 +120,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ChangeCit
     
     func userEnteredANewCityName(city: String) {
         print("city is: \(city)")
+        
+        let params : [String:String] = ["q" : city, "appid" : APP_ID]
+        getWeatherData(url: WEATHER_URL, parameters: params)
     }
     
 
